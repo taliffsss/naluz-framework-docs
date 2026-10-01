@@ -1,0 +1,48 @@
+---
+title: "NaluzPHP Documentation"
+description: "A modern, secure PHP framework for monoliths and REST APIs, with a built-in ORM, query builder, queues, GraphQL and more."
+template: splash
+hero:
+  tagline: A modern, secure PHP framework for monoliths and REST APIs. Familiar to Laravel developers, small enough to read, strict by default.
+  actions:
+    - text: Get started
+      link: prologue/getting-started/
+      icon: right-arrow
+    - text: Installation
+      link: prologue/installation/
+      variant: minimal
+    - text: GitHub
+      link: https://github.com/taliffsss/naluzphp-framework
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## What you get
+
+<CardGrid stagger>
+  <Card title="Secure by default" icon="approve-check">
+    Bound SQL parameters, validated identifiers, auto-escaping templates, CSRF protection, encrypted queue payloads and an SSRF-guarded HTTP client, all switched on out of the box.
+  </Card>
+  <Card title="Batteries included" icon="puzzle">
+    Router, ORM, migrations, validation, sessions, auth, queues, mail, scheduler, storage, caching, logging, GraphQL and a CLI.
+  </Card>
+  <Card title="Built on standards" icon="seti:json">
+    PSR-1, 3, 4, 6, 7, 11, 12, 13, 14, 15, 16, 17, 18 and 20. Any PSR-15 middleware or PSR-3 logger drops in.
+  </Card>
+  <Card title="Modern PHP" icon="rocket">
+    PHP 8.2+, strict types everywhere, a small codebase you can audit, tested on PHP 8.2 to 8.5.
+  </Card>
+</CardGrid>
+
+## Start here
+
+<CardGrid>
+  <LinkCard title="Installation" href="prologue/installation/" description="Create a project in a minute." />
+  <LinkCard title="Your first feature" href="prologue/getting-started/" description="Migration, model, controller and route." />
+  <LinkCard title="Routing" href="basics/routing/" description="Routes, groups, parameters and resources." />
+  <LinkCard title="Database &amp; ORM" href="database/overview/" description="Query builder, models and relationships." />
+  <LinkCard title="Security" href="security/overview/" description="What is automatic and what is up to you." />
+  <LinkCard title="GraphQL" href="advanced/graphql/" description="A built-in, dependency-free GraphQL server." />
+</CardGrid>
