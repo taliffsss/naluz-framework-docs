@@ -3,7 +3,8 @@ title: "Command Line (naluz)"
 description: "Every naluz command, its options and examples."
 ---
 
-The `naluz` script in the project root is the command-line entry point:
+The `naluz` script in the project root is the command-line entry point. If you installed the [global installer](../../prologue/installer/),
+you can also type `naluz <command>` inside a project, and it runs the same command:
 
 ```bash
 php naluz list                 # or: php naluz help

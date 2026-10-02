@@ -1,12 +1,66 @@
 ---
 title: "Installation"
-description: "Create a new NaluzPHP project, either with the naluz new command or by cloning the skeleton."
+description: "Install the naluz installer and create a new NaluzPHP project, or clone the skeleton."
 ---
 
-## Create a project
+## Install the NaluzPHP installer (recommended)
+
+The installer is a global Composer package that adds the `naluz` command, so you can create projects from anywhere:
+
+```bash
+composer global require naluz/installer
+```
+
+Make sure Composer's global `bin` directory is on your `PATH`. Find it with `composer global config bin-dir --absolute`
+(commonly `~/.composer/vendor/bin` or `~/.config/composer/vendor/bin`). Check that it works:
+
+```bash
+naluz --version
+```
+
+:::note
+If `composer global require naluz/installer` cannot find the package (it has not been registered on Packagist yet), install it from
+GitHub instead:
+
+```bash
+composer global config repositories.naluz-installer vcs https://github.com/taliffsss/naluz-installer
+composer global require naluz/installer:dev-main
+```
+:::
+
+Then create a project:
+
+```bash
+naluz new my-app
+cd my-app
+php naluz run:server
+```
+
+`naluz new` creates the project with Composer, generates `APP_KEY` and `JWT_SECRET`, creates the default SQLite database file and,
+if you agree, runs the migrations. Open <http://127.0.0.1:8000> and try `GET /api/ping`.
+
+```bash
+naluz new shop --name=acme/shop --migrate --git      # set the package name, migrate, git init + first commit
+naluz new api --release=^1.2                         # a specific release
+naluz new . --dev                                    # the development version, into the current empty directory
+```
+
+See [The installer](../installer/) for every option, how commands are forwarded inside a project, and troubleshooting. Update it
+with `composer global update naluz/installer`.
+
+## Other ways to create a project
 
 NaluzPHP projects start from the application skeleton, [`naluzphp-framework`](https://github.com/taliffsss/naluzphp-framework).
 The framework itself arrives in `vendor/naluz/framework` when you run `composer install`.
+
+### With Composer directly
+
+This is what the installer runs for you:
+
+```bash
+composer create-project naluz/naluzphp my-app \
+  --repository='{"type":"vcs","url":"https://github.com/taliffsss/naluzphp-framework"}'
+```
 
 ### Clone the skeleton
 
@@ -21,18 +75,13 @@ php naluz migrate
 php naluz run:server
 ```
 
-Open <http://127.0.0.1:8000> and try `GET /api/ping`.
+### From inside an existing project
 
-### Use the project generator
-
-From inside a clone of the skeleton you can scaffold further projects:
+A project also has its own generator, which copies the project it is run in:
 
 ```bash
 php naluz new my-app
-cd my-app && php naluz migrate && php naluz run:server
 ```
-
-`naluz new` copies the starter, writes a `.env` with a fresh `APP_KEY` and `JWT_SECRET`, and runs `composer install`.
 
 | Option | Meaning |
 |---|---|

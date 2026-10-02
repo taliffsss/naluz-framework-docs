@@ -31,6 +31,7 @@ Composer checks these when you run `composer install`.
 ## Tooling
 
 - [Composer](https://getcomposer.org/) 2
+- The [`naluz` installer](../installer/) (optional, recommended): `composer global require naluz/installer`
 - Git, to clone the skeleton
 - A web server (Apache or nginx with PHP-FPM) for production. `php naluz run:server` is enough for development.
 

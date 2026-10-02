@@ -31,6 +31,7 @@ It was created by Mark Anthony Naluz and is released under the MIT license.
 |---|---|
 | [`naluzphp-framework`](https://github.com/taliffsss/naluzphp-framework) | The **application skeleton**. Clone it to start a project. It contains `app/`, `config/`, `routes/`, the test suite and the `naluz` command. |
 | [`naluz-framework`](https://github.com/taliffsss/naluz-framework) | The **framework core**, a Composer package (`naluz/framework`) installed into `vendor/` by `composer install`. |
+| [`naluz-installer`](https://github.com/taliffsss/naluz-installer) | The global **installer** (`naluz/installer`): `naluz new my-app`. See [The installer](../installer/). |
 | [`naluz-framework-docs`](https://github.com/taliffsss/naluz-framework-docs) | This documentation site, the single source of truth for NaluzPHP documentation. |
 
 :::note

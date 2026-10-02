@@ -10,6 +10,7 @@ The documentation site for the [NaluzPHP framework](https://github.com/taliffsss
 |---|---|
 | [`naluzphp-framework`](https://github.com/taliffsss/naluzphp-framework) | the application skeleton (clone it to start a project) |
 | [`naluz-framework`](https://github.com/taliffsss/naluz-framework) | the framework core (`naluz/framework` on Composer) |
+| [`naluz-installer`](https://github.com/taliffsss/naluz-installer) | the global installer (`naluz new my-app`) |
 | `naluz-framework-docs` (this repo) | the documentation |
 
 ## Why Astro (Starlight)
@@ -37,7 +38,7 @@ npm run check        # after a build: verifies every internal link and #anchor
 ```text
 src/content/docs/
 ├── index.mdx            home page
-├── prologue/            introduction, requirements, installation, getting started, structure, configuration
+├── prologue/            introduction, requirements, installation, installer, getting started, structure, configuration
 ├── basics/              routing, controllers, requests and responses, middleware, views, validation, sessions, errors, logging
 ├── security/            overview, authentication, authorization, encryption, protections
 ├── database/            overview, query builder, migrations, models, relationships, factories, read/write, drivers, caching, NoSQL

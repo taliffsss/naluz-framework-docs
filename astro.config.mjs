@@ -30,6 +30,7 @@ export default defineConfig({
           { slug: 'prologue/introduction' },
           { slug: 'prologue/requirements' },
           { slug: 'prologue/installation' },
+          { slug: 'prologue/installer' },
           { slug: 'prologue/getting-started' },
           { slug: 'prologue/structure' },
           { slug: 'prologue/configuration' },
