@@ -11,22 +11,15 @@ The installer is a global Composer package that adds the `naluz` command, so you
 composer global require naluz/installer
 ```
 
-Make sure Composer's global `bin` directory is on your `PATH`. Find it with `composer global config bin-dir --absolute`
-(commonly `~/.composer/vendor/bin` or `~/.config/composer/vendor/bin`). Check that it works:
+Then check that the command is available:
 
 ```bash
-naluz --version
+naluz --version        # NaluzPHP Installer 1.0.0
 ```
 
-:::note
-If `composer global require naluz/installer` cannot find the package (it has not been registered on Packagist yet), install it from
-GitHub instead:
-
-```bash
-composer global config repositories.naluz-installer vcs https://github.com/taliffsss/naluz-installer
-composer global require naluz/installer:dev-main
-```
-:::
+If you see `command not found` (or `'naluz' is not recognized`), Composer's global `bin` folder is not on your `PATH`. See
+[`naluz: command not found`](#naluz-command-not-found) below. Update the installer later with
+`composer global update naluz/installer`.
 
 Then create a project:
 
@@ -47,6 +40,85 @@ naluz new . --dev                                    # the development version, 
 
 See [The installer](../installer/) for every option, how commands are forwarded inside a project, and troubleshooting. Update it
 with `composer global update naluz/installer`.
+
+## `naluz: command not found`
+
+`composer global require` puts the `naluz` file in Composer's global `bin` folder. If that folder is not on your `PATH`, your shell
+cannot find the command. This is normal after a first global install and is easy to fix. First check that the package is
+installed and find the folder:
+
+```bash
+composer global show naluz/installer
+composer global config bin-dir --absolute
+```
+
+The second command prints the folder to add to your `PATH`. Typical locations are listed below; use the exact path it prints.
+
+### macOS (zsh)
+
+macOS uses zsh by default. Typical folder: `~/.composer/vendor/bin` (or `~/.config/composer/vendor/bin`).
+
+```bash
+echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> ~/.zshrc
+source ~/.zshrc
+naluz --version
+```
+
+To always follow Composer's own setting instead of hard-coding the path:
+
+```bash
+echo 'export PATH="$PATH:$(composer global config bin-dir --absolute 2>/dev/null)"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+If you installed PHP and Composer with Homebrew and the folder looks different, use the path that `composer global config bin-dir --absolute`
+printed. Bash users (`~/.bash_profile`) do the same in that file.
+
+### Linux (bash, zsh, fish)
+
+Typical folder: `~/.config/composer/vendor/bin` (newer Composer) or `~/.composer/vendor/bin`.
+
+```bash
+# bash
+echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc && source ~/.bashrc
+
+# zsh
+echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.zshrc && source ~/.zshrc
+
+# fish
+fish_add_path ~/.config/composer/vendor/bin
+```
+
+Replace the folder with the one `composer global config bin-dir --absolute` printed if it is different.
+
+### Windows
+
+The Composer installer normally adds the folder to your `PATH` for you. If `naluz` is not recognized, the typical folder is
+`%APPDATA%\Composer\vendor\bin` (for example `C:\Users\you\AppData\Roaming\Composer\vendor\bin`). In PowerShell:
+
+```powershell
+composer global config bin-dir --absolute
+[Environment]::SetEnvironmentVariable("Path", $env:Path + ";$env:APPDATA\Composer\vendor\bin", "User")
+```
+
+Or use the interface: press **Win**, search for **Edit environment variables for your account**, select **Path**, click **Edit**, then
+**New**, and paste the folder. Click **OK** on each window. **Close and reopen** your terminal, then run:
+
+```powershell
+naluz --version
+```
+
+In Git Bash, use the `export PATH=...` form from the Linux section with a path like `/c/Users/you/AppData/Roaming/Composer/vendor/bin`.
+
+### Check and troubleshoot
+
+- Open a **new** terminal window after changing your `PATH`. `source ~/.zshrc` (or `~/.bashrc`) only affects the current one.
+- Confirm the file exists: `ls "$(composer global config bin-dir --absolute)"` should list `naluz` (on Windows, `dir` shows `naluz` and
+  `naluz.bat`). If the folder is empty, run `composer global require naluz/installer` again.
+- `echo $PATH` (PowerShell: `$env:Path`) should contain that folder.
+- Run it by full path to confirm it works: `~/.composer/vendor/bin/naluz --version`.
+- To avoid touching your `PATH`, you can skip the installer and use [Composer directly](#with-composer-directly) or the
+  [skeleton](#clone-the-skeleton).
 
 ## Other ways to create a project
 

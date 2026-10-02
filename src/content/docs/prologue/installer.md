@@ -98,7 +98,7 @@ The installer only creates projects. Update an existing project's framework with
 
 | Message | What to do |
 |---|---|
-| `naluz: command not found` | add Composer's global `bin` directory to your `PATH` |
+| `naluz: command not found` (or `'naluz' is not recognized`) | add Composer's global `bin` directory to your `PATH`: [steps for macOS, Linux and Windows](../installation/#naluz-command-not-found) |
 | `Composer was not found` | install Composer, or set the `COMPOSER_BINARY` environment variable to its path |
 | `The directory [...] is not empty` | choose another name, or empty the directory |
 | `Invalid project name` | use letters, digits, `.`, `_` and `-` only |
