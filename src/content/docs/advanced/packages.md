@@ -9,7 +9,7 @@ service providers in its `composer.json`:
 ```json
 {
   "name": "acme/blog",
-  "require": { "naluz/framework": "^1.2" },
+  "require": { "naluz/framework": "^1.2.2" },
   "autoload": { "psr-4": { "Acme\\Blog\\": "src/" } },
   "extra": { "naluz": { "providers": ["Acme\\Blog\\BlogServiceProvider"] } }
 }

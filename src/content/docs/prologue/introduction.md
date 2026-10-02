@@ -50,5 +50,5 @@ missing (for example policies or a Gate, subscriptions in GraphQL, or an S3 disk
 ## Versioning
 
 The framework follows semantic versioning. Release notes live under [Releases](../../releases/). The application skeleton
-requires the core through Composer (`"naluz/framework": "^1.2"`), so you update the framework with
+requires the core through Composer (`"naluz/framework": "^1.2.2"`), so you update the framework with
 `composer update naluz/framework`.

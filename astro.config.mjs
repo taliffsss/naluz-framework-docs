@@ -100,6 +100,7 @@ export default defineConfig({
         ] },
         { label: 'Releases', items: [
           { slug: 'releases' },
+          { slug: 'releases/v1-2-2' },
           { slug: 'releases/v1-2-0' },
           { slug: 'releases/v1-0-0' },
         ] },

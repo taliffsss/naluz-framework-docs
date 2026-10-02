@@ -52,19 +52,25 @@ The framework core (`vendor/naluz/framework/src`) contains these namespaces unde
 The framework is split into a core package and an application skeleton:
 
 - **`naluz/framework`** ([`naluz-framework`](https://github.com/taliffsss/naluz-framework)): the core library, installed into `vendor/`.
-- **[`naluzphp-framework`](https://github.com/taliffsss/naluzphp-framework)**: the skeleton you clone. It requires `"naluz/framework": "^1.2"`
+- **[`naluzphp-framework`](https://github.com/taliffsss/naluzphp-framework)**: the skeleton you clone. It requires `"naluz/framework": "^1.2.2"`
   and holds `app/`, `config/`, `routes/`, tests and the `naluz` script.
 
 You update the framework with `composer update naluz/framework`.
 
-The skeleton's `composer.json` fetches the core from its GitHub repository through a Composer `vcs` repository entry:
+`naluz/framework` is published on [Packagist](https://packagist.org/packages/naluz/framework), so the skeleton's `composer.json` needs no
+`repositories` entry. It just requires the package, like any other dependency:
 
 ```json
-"repositories": [{ "type": "vcs", "url": "https://github.com/taliffsss/naluz-framework" }],
-"require": { "naluz/framework": "^1.2" }
+"require": {
+    "php": "^8.2",
+    "naluz/framework": "^1.2.2"
+}
 ```
 
-Once the package is registered on Packagist the `repositories` entry can be removed.
+:::caution
+Require `^1.2.2` or later. Versions 1.2.0 and 1.2.1 on Packagist were indexed at a commit without the GraphQL server, so they lack
+`Naluz\GraphQL`. See the [v1.2.2 release notes](../../releases/v1-2-2/).
+:::
 
 ## Known limitations
 

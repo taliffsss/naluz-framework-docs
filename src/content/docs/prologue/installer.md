@@ -29,7 +29,7 @@ It runs `composer create-project` for the NaluzPHP skeleton, then:
 | Option | Meaning |
 |---|---|
 | `--dir=PATH` | create the project inside `PATH` (default: the current directory) |
-| `--release=VERSION` | install a specific release such as `1.2.0` or `^1.2` (default: the latest stable release) |
+| `--release=VERSION` | install a specific release such as `1.2.2` or `^1.2` (default: the latest stable release) |
 | `--dev` | install the development version (`dev-master`) |
 | `--name=vendor/package` | set the Composer package name of the new project (lower case, `vendor/package`) |
 | `--git` | run `git init` and make the first commit |
@@ -91,7 +91,7 @@ The installer only creates projects. Update an existing project's framework with
   by `sh`.
 - Commands are forwarded only when the current directory really looks like a NaluzPHP project; an unrelated file named `naluz` is
   never executed.
-- The skeleton is downloaded by Composer from `https://github.com/taliffsss/naluzphp-framework` over HTTPS, with Composer's usual
+- The skeleton (`naluz/naluzphp`) is installed by Composer from Packagist over HTTPS, with Composer's usual
   integrity checks.
 
 ## Troubleshooting

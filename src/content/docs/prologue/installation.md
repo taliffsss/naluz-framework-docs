@@ -55,11 +55,11 @@ The framework itself arrives in `vendor/naluz/framework` when you run `composer 
 
 ### With Composer directly
 
-This is what the installer runs for you:
+The skeleton is a normal Composer package, so no extra repository settings are needed:
 
 ```bash
-composer create-project naluz/naluzphp my-app \
-  --repository='{"type":"vcs","url":"https://github.com/taliffsss/naluzphp-framework"}'
+composer create-project naluz/naluzphp my-app
+composer create-project naluz/naluzphp my-app dev-master    # the development version
 ```
 
 ### Clone the skeleton
