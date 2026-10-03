@@ -21,6 +21,16 @@ Set these in `.env` or in the real environment. Real environment variables take 
 | `PREVENT_LAZY_LOADING` | unset | force the N+1 guard on or off (default: on for `local`, `testing` and debug) |
 | `JWT_SECRET` | empty | at least 32 characters, for JWT authentication |
 
+## Event streaming (optional)
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `MESSAGING_CONNECTION` | `memory` | `memory`, `redis`, `rabbitmq` or `kafka` |
+| `MESSAGING_GROUP` | `naluzphp` | this service's consumer group |
+| `MESSAGING_SIGNING_KEY` | empty | HMAC key; when set, unsigned or tampered messages are dropped |
+| `RABBITMQ_HOST` / `RABBITMQ_PORT` / `RABBITMQ_USER` / `RABBITMQ_PASSWORD` / `RABBITMQ_VHOST` | `127.0.0.1` / `5672` / `guest` / `guest` / `/` | RabbitMQ connection |
+| `KAFKA_BROKERS` | `127.0.0.1:9092` | Kafka bootstrap servers |
+
 ## Cache, session, queue, Redis
 
 | Variable | Default | Purpose |

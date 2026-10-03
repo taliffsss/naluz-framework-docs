@@ -13,6 +13,7 @@ Do not use `naluz/framework` **1.2.0 or 1.2.1**. Packagist indexed them at a com
 
 | Version | Highlights |
 |---|---|
+| [v1.3.0](v1-3-0/) | Optional **event streaming**: Redis Streams, RabbitMQ and Kafka, consumer groups, retries, dead letters, signed messages |
 | [v1.2.2](v1-2-2/) | The clean release of GraphQL and model observers; `Application::VERSION` now reports the real version |
 | v1.2.1 | Superseded (see v1.2.2) |
 | [v1.2.0](v1-2-0/) | Built-in **GraphQL** server; model **observers** (`Model::observe()`, `#[ObservedBy]`, `make:observer`) |

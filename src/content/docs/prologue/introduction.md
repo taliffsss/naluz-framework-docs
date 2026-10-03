@@ -19,6 +19,7 @@ It was created by Mark Anthony Naluz and is released under the MIT license.
 | Drivers | SQLite, MySQL / MariaDB, PostgreSQL, SQL Server, plus NoSQL document stores (file, memory, MongoDB) |
 | Performance | Optional model query caching, route caching, compiled templates, Redis support |
 | Background work | Queues (sync, database, Redis), cron-style scheduler, mail |
+| Event-driven systems | Optional event streaming over Redis Streams, RabbitMQ or Kafka (1.3.0+) |
 | Views | Compiled, auto-escaping template engine (`*.naluz.php`) |
 | Security | Argon2id hashing, encryption, JWT, CSRF, sessions, validation, SSRF-guarded HTTP client |
 | APIs | JSON responses and pagination, a built-in GraphQL server |

@@ -82,6 +82,16 @@ The name is validated against a strict allow-list, so path traversal (`../`) and
 | `schedule:run` | run due tasks (call from cron every minute) |
 | `schedule:list` | list tasks and their next run |
 
+## Event streaming
+
+| Command | Purpose |
+|---|---|
+| `messaging:consume <topic[,topic]>` | consume events. `--group=`, `--connection=`, `--tries=3`, `--backoff=0`, `--max-messages=N`, `--stop-when-empty`, `--memory=128` |
+| `messaging:declare <topic[,topic]>` | create the consumer group or queue up front (`--group=`, `--connection=`) |
+| `messaging:publish <topic> '<json>'` | publish a test event |
+
+See [Event streaming](../../advanced/event-streaming/).
+
 ## Model cache
 
 | Command | Purpose |

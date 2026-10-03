@@ -101,3 +101,18 @@ that support splitting also accept `write`, `read`, `sticky`, `read_fallback`, `
 
 `schema` (class with `public static function build(): Schema`, or a closure), `max_depth`, `max_nodes`, `max_query_length`,
 `introspection`.
+
+## `messaging.php`
+
+Optional event streaming ([guide](../../advanced/event-streaming/)). Needs `naluz/framework` 1.3.0 or later.
+
+| Key | Default | Meaning |
+|---|---|---|
+| `default` | `memory` (`MESSAGING_CONNECTION`) | `memory`, `redis`, `rabbitmq` or `kafka` |
+| `group` | `naluzphp` (`MESSAGING_GROUP`) | consumer group for `messaging:consume` |
+| `subscribers` | `[]` | topic or `orders.*` pattern => list of `Subscriber` classes |
+| `signing_key` / `previous_signing_keys` | empty | HMAC-SHA256 signing and rotation |
+| `max_bytes` | `1048576` | largest accepted message |
+| `connections.redis` | | `prefix`, `max_length` (100000), `visibility_timeout` (60 s), `start_id` (`'0'`), optional `host`/`port`/`password` |
+| `connections.rabbitmq` | | `host`, `port`, `user`, `password`, `vhost`, `ssl`, `exchange` (`naluz.events`), `prefetch`, `queue_arguments` |
+| `connections.kafka` | | `brokers`, `offset_reset` (`earliest`), `options` (raw librdkafka settings) |
