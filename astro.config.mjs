@@ -71,6 +71,7 @@ export default defineConfig({
           { slug: 'advanced/events' },
           { slug: 'advanced/cache' },
           { slug: 'advanced/queues' },
+          { slug: 'advanced/event-streaming' },
           { slug: 'advanced/mail' },
           { slug: 'advanced/scheduler' },
           { slug: 'advanced/storage' },
@@ -100,6 +101,7 @@ export default defineConfig({
         ] },
         { label: 'Releases', items: [
           { slug: 'releases' },
+          { slug: 'releases/v1-3-0' },
           { slug: 'releases/v1-2-2' },
           { slug: 'releases/v1-2-0' },
           { slug: 'releases/v1-0-0' },

@@ -42,7 +42,7 @@ src/content/docs/
 ├── basics/              routing, controllers, requests and responses, middleware, views, validation, sessions, errors, logging
 ├── security/            overview, authentication, authorization, encryption, protections
 ├── database/            overview, query builder, migrations, models, relationships, factories, read/write, drivers, caching, NoSQL
-├── advanced/            container, providers, events, cache, queues, mail, scheduler, storage, HTTP client, GraphQL, packages
+├── advanced/            container, providers, events, cache, queues, mail, scheduler, storage, HTTP client, GraphQL, event streaming, packages
 ├── tooling/             CLI, testing, deployment, performance
 ├── reference/           configuration, environment variables, helpers, PSR, architecture, comparison with Laravel
 ├── guides/              REST API, GraphQL API, background jobs, going to production
@@ -86,7 +86,7 @@ The former `docs/` folder of `naluzphp-framework` was moved here and reorganized
 | `database.md` | Database overview, Query Builder, Migrations, Models, Relationships, Factories and Seeders, Read/Write, Drivers |
 | `model-cache.md` | Model Caching |
 | `nosql.md` | NoSQL, Read/Write Connections, Database Drivers |
-| `queues.md`, `mail.md`, `scheduler.md`, `storage.md`, `http-client.md`, `graphql.md` | the pages of the same names under Digging Deeper |
+| `queues.md`, `mail.md`, `scheduler.md`, `storage.md`, `http-client.md`, `graphql.md`, `event-streaming.md` | the pages of the same names under Digging Deeper |
 | `providers-and-observers.md` | Service Providers, Events and Observers |
 | `packages.md` | Packages and Extending |
 | `logging.md` | Logging, Error Handling |

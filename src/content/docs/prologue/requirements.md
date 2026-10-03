@@ -26,6 +26,9 @@ Composer checks these when you run `composer install`.
 | Microsoft SQL Server | `pdo_sqlsrv` and the Microsoft ODBC driver |
 | MongoDB document store | `composer require mongodb/mongodb` and `ext-mongodb` |
 | Redis cache, sessions or queue | a Redis server. No PHP extension is needed because the framework ships its own client |
+| Event streaming over Redis Streams | Redis 6.2 or newer (no PHP extension) |
+| Event streaming over RabbitMQ | `composer require php-amqplib/php-amqplib` |
+| Event streaming over Kafka | `ext-rdkafka` |
 | Graceful queue worker shutdown | `pcntl`, so `queue:work` finishes the current job on `SIGTERM` / `SIGINT` |
 
 ## Tooling
